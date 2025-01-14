@@ -13,6 +13,10 @@ templates = Jinja2Templates(directory="templates")
 def home(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
+<<<<<<< HEAD
+=======
+# Cambiamos la ruta de "/gallery" a "/marcas-de-coches"
+>>>>>>> 556eadf1bcbda27ac813218c711d36edecec33e9
 @app.get("/marcas-de-coches", response_class=HTMLResponse)
 def marcas_de_coches(request: Request):
     return templates.TemplateResponse("gallery.html", {"request": request})
