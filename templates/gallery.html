@@ -6,9 +6,10 @@
 <div class="main-content">
     <h2>Galería de Coches Modificados</h2>
     <div class="gallery">
-        <img src="/static/images/subaru.jpg" alt="Subaru Impreza">
-        <img src="/static/images/e46.jpg" alt="BMW E46">
-        <img src="/static/images/evo.jpg" alt="Mitsubishi Evo">
+        <img src="{{ url_for('static', path='images/car1.jpg') }}" alt="Coche 1">
+        <img src="{{ url_for('static', path='images/car2.jpg') }}" alt="Coche 2">
+        <img src="{{ url_for('static', path='images/car3.jpg') }}" alt="Coche 3">
     </div>
+    <button onclick="location.href='/'">Volver a la página principal</button>
 </div>
 {% endblock %}
