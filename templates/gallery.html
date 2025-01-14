@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Marcas de coches{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <h2>MARCAS DE COCHES PARA MODIFICAR</h2>
+    <div class="gallery">
+        <!-- BMW -->
+        <a href="/marca/bmw">
+            <img src="{{ url_for('static', path='images/bmw.jpg') }}" alt="BMW">
+            <p>BMW</p>
+        </a>
+
+        <!-- Mitsubishi -->
+        <a href="/marca/mitsubishi">
+            <img src="{{ url_for('static', path='images/mitsubishi.jpg') }}" alt="Mitsubishi">
+            <p>Mitsubishi</p>
+        </a>
+
+        <!-- Subaru -->
+        <a href="/marca/subaru">
+            <img src="{{ url_for('static', path='images/logosubaru.jpg') }}" alt="Subaru">
+            <p>Subaru</p>
+        </a>
+    </div>
+    <button onclick="location.href='/'">Volver a la página principal</button>
+</div>
+
