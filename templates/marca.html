@@ -1,19 +1,23 @@
 {% extends "base.html" %}
 
-{% block title %}{{ nombre }}{% endblock %}
+{% block title %}{{ nombre }} - Detalles de Modelos{% endblock %}
 
 {% block content %}
-<div class="main-content">
-    <h2>{{ nombre }}</h2>
-    <p>{{ descripcion }}</p>
+    <div class="brand-banner">
+        <h1>Modelos de {{ nombre }}</h1>
+        <p>{{ descripcion }}</p>
+    </div>
 
-    <h3>Modelos Disponibles:</h3>
-    <ul>
+    <div class="model-gallery">
         {% for modelo in modelos %}
-            <li>{{ modelo }}</li>
+        <div class="model-item">
+            <img src="{{ url_for('static', path='images/' + modelo.imagen) }}" alt="{{ modelo.nombre }}">
+            <div class="model-info">
+                <h3>{{ modelo.nombre }}</h3>
+                <p>Modificaciones disponibles: {{ modelo.piezas | join(", ") }}</p>
+            </div>
+        </div>
         {% endfor %}
-    </ul>
-
-    <button onclick="location.href='/gallery'">Volver a la Galería de Marcas</button>
-</div>
+        <a href="/gallery" class="cta-button">Volver a ver marcas</a>
+    </div>
 {% endblock %}
