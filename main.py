@@ -5,12 +5,12 @@ from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
-# Montar archivos estáticos
+
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="templates")
 
-# Lista de marcas de coches
+
 marcas = [
     {"id": "bmw", "nombre": "BMW", "logo": "bmw.jpg"},
     {"id": "mitsubishi", "nombre": "Mitsubishi", "logo": "mitsubishi.jpg"},
@@ -26,7 +26,7 @@ def gallery(request: Request, search: str = ""):
     """
     Muestra la galería de marcas de coches, y filtra según el término de búsqueda.
     """
-    # Filtrar las marcas si se ha introducido un término de búsqueda
+    
     if search:
         marcas_filtradas = [marca for marca in marcas if search.lower() in marca["nombre"].lower()]
     else:

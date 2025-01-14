@@ -3,15 +3,29 @@
 {% block title %}Contacto{% endblock %}
 
 {% block content %}
-<div class="main-content">
+<div class="contact-container">
     <h2>Contacto</h2>
-    <p>¿Quieres más información? Envíanos un mensaje.</p>
+    <p>¿Tienes alguna pregunta o comentario? Envíanos un mensaje y te responderemos lo antes posible.</p>
+    
     <form>
-        <input type="text" placeholder="Tu nombre" required>
-        <input type="email" placeholder="Tu correo" required>
-        <textarea placeholder="Tu mensaje"></textarea>
-        <button type="submit">Enviar</button>
-        <button onclick="location.href='/'">Volver a la página principal</button>
+        <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" placeholder="Tu nombre" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" placeholder="Tu correo" required>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Mensaje:</label>
+            <textarea id="message" placeholder="Tu mensaje..." required></textarea>
+        </div>
+
+        <div class="form-buttons">
+            <button type="submit">Enviar</button>
+        </div>
     </form>
 </div>
 {% endblock %}
