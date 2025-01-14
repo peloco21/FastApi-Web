@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ nombre }}{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <h2>{{ nombre }}</h2>
+    <p>{{ descripcion }}</p>
+    <h3>Modelos Disponibles:</h3>
+    <ul>
+        {% for modelo in modelos %}
+        <li>{{ modelo }}</li>
+        {% endfor %}
+    </ul>
+    <button onclick="location.href='/gallery'">Volver a las marcas</button>
+</div>
+{% endblock %}
