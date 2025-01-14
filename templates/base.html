@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Los Santos Custom{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/services.css') }}">
     {% block css %}{% endblock %}
 </head>
 <body>
@@ -12,11 +13,11 @@
         <img src="{{ url_for('static', path='images/lossantoscustom.jpg') }}" alt="Banner de Los Santos Custom">
     </div>
     <div class="navbar">
+        <a href="/">Inicio</a>
         <a href="/gallery">Explorar Marcas</a>
         <a href="/contact">Contáctanos</a>
+        <a href="/services">Servicios</a>
         <a href="/sobre-nosotros">Sobre Nosotros</a>
-        <a href="/servicios">Servicios</a>
-        <a href="/">Inicio</a>
     </div>
     
     <div class="main-content">

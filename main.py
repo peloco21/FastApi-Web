@@ -75,3 +75,7 @@ def marca(request: Request, nombre_marca: str):
         })
     else:
         return templates.TemplateResponse("404.html", {"request": request})
+
+@app.get("/services", response_class=HTMLResponse)
+def services(request: Request):
+    return templates.TemplateResponse("services.html", {"request": request})
