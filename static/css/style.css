@@ -36,6 +36,7 @@ footer {
     margin-bottom: 30px;
 }
 
+<<<<<<< HEAD
 .gallery a {
     text-decoration: none;
     text-align: center;
@@ -48,6 +49,11 @@ footer {
     width: 150px;
     height: 150px;
     object-fit: contain;
+=======
+.gallery img {
+    width: 300px;
+    height: auto;
+>>>>>>> e8a04f7724f513e8826c8b3a9a181be1a56fb2ff
     border: 2px solid #f1c40f;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -58,10 +64,13 @@ footer {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 }
 
+<<<<<<< HEAD
 .gallery p {
     margin-top: 10px;
 }
 
+=======
+>>>>>>> e8a04f7724f513e8826c8b3a9a181be1a56fb2ff
 button {
     background: #f1c40f;
     color: black;

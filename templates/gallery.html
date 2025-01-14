@@ -27,3 +27,18 @@
     <button onclick="location.href='/'">Volver a la página principal</button>
 </div>
 {% endblock %}
+
+{% block title %}Galería{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <h2>Galería de Coches Modificados</h2>
+    <div class="gallery">
+        <img src="{{ url_for('static', path='images/e46.jpg') }}" alt="e46">
+        <img src="{{ url_for('static', path='images/evo.jpg') }}" alt="evo">
+        <img src="{{ url_for('static', path='images/subaru.jpg') }}" alt="subaru">
+    </div>
+    <button onclick="location.href='/'">Volver a la página principal</button>
+</div>
+{% endblock %}
+
