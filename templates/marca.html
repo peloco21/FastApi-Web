@@ -1,21 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ nombre }}</title>
-</head>
-<body>
-    <h1>{{ nombre }}</h1>
+{% extends "base.html" %}
+
+{% block title %}{{ nombre }}{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <h2>{{ nombre }}</h2>
     <p>{{ descripcion }}</p>
-    
-    <h2>Modelos:</h2>
+
+    <h3>Modelos Disponibles:</h3>
     <ul>
         {% for modelo in modelos %}
             <li>{{ modelo }}</li>
         {% endfor %}
     </ul>
-    
-    <a href="/gallery">Volver a las marcas</a>
-</body>
-</html>
+
+    <button onclick="location.href='/gallery'">Volver a la Galería de Marcas</button>
+</div>
+{% endblock %}
