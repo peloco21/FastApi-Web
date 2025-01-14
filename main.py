@@ -13,7 +13,7 @@ templates = Jinja2Templates(directory="templates")
 def home(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
-@app.get("/marcas-de-coches", response_class=HTMLResponse)
+@app.get("/gallery", response_class=HTMLResponse)
 def marcas_de_coches(request: Request):
     return templates.TemplateResponse("gallery.html", {"request": request})
 
