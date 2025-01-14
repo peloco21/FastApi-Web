@@ -23,10 +23,6 @@ def home(request: Request):
 
 @app.get("/gallery", response_class=HTMLResponse)
 def gallery(request: Request, search: str = ""):
-    """
-    Muestra la galería de marcas de coches, y filtra según el término de búsqueda.
-    """
-    
     if search:
         marcas_filtradas = [marca for marca in marcas if search.lower() in marca["nombre"].lower()]
     else:
@@ -42,11 +38,21 @@ def gallery(request: Request, search: str = ""):
 def contact(request: Request):
     return templates.TemplateResponse("contact.html", {"request": request})
 
+@app.get("/services", response_class=HTMLResponse)
+def services(request: Request):
+    return templates.TemplateResponse("servicios.html", {"request": request})
+
+@app.get("/servicios", response_class=HTMLResponse)
+def servicios(request: Request):
+    return templates.TemplateResponse("servicios.html", {"request": request})
+
+@app.get("/sobrenosotros", response_class=HTMLResponse)
+def sobrenosotros(request: Request):
+    return templates.TemplateResponse("sobrenosotros.html", {"request": request})
+
+
 @app.get("/marca/{nombre_marca}", response_class=HTMLResponse)
 def marca(request: Request, nombre_marca: str):
-    """
-    Muestra la información detallada de una marca específica.
-    """
     marcas_info = {
         "bmw": {
             "nombre": "BMW",
@@ -76,6 +82,3 @@ def marca(request: Request, nombre_marca: str):
     else:
         return templates.TemplateResponse("404.html", {"request": request})
 
-@app.get("/services", response_class=HTMLResponse)
-def services(request: Request):
-    return templates.TemplateResponse("services.html", {"request": request})
