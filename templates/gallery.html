@@ -1,27 +1,25 @@
 {% extends "base.html" %}
 
-{% block title %}Marcas de Coches{% endblock %}
+{% block title %}Explorar Marcas{% endblock %}
 
 {% block content %}
 <div class="main-content">
-    <h2>Marcas de Coches para Modificar</h2>
+    <h2>Explora las Marcas de Coches</h2>
+
+    <form method="GET" action="/gallery" class="search-container">
+        <input type="text" name="search" placeholder="Buscar por marca..." value="{{ search_term }}">
+        <button type="submit">Buscar</button>
+    </form>
+
     <div class="gallery">
-        <!-- Enlace a la página de BMW -->
-        <a href="/marca/bmw">
-            <img src="{{ url_for('static', path='images/bmw.jpg') }}" alt="BMW">
-            <p style="text-align: center; color: white;">BMW</p>
+        {% for marca in marcas %}
+        <a href="/marca/{{ marca.id }}">
+            <img src="{{ url_for('static', path='images/' + marca.logo) }}" alt="{{ marca.nombre }}">
+            <p>{{ marca.nombre }}</p>
         </a>
-        <!-- Enlace a la página de Mitsubishi -->
-        <a href="/marca/mitsubishi">
-            <img src="{{ url_for('static', path='images/mitsubishi.jpg') }}" alt="Mitsubishi">
-            <p style="text-align: center; color: white;">Mitsubishi</p>
-        </a>
-        <!-- Enlace a la página de Subaru -->
-        <a href="/marca/subaru">
-            <img src="{{ url_for('static', path='images/logosubaru.jpg') }}" alt="Subaru">
-            <p style="text-align: center; color: white;">Subaru</p>
-        </a>
+        {% endfor %}
     </div>
-    <button onclick="location.href='/'">Volver a la Página Principal</button>
+
+    <button onclick="location.href='/'">Volver a la página principal</button>
 </div>
 {% endblock %}

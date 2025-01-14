@@ -3,11 +3,36 @@
 {% block title %}Inicio{% endblock %}
 
 {% block content %}
-<div class="main-content">
-    <h2>Bienvenido a Los Santos Custom</h2>
-    <p>Descubre el mundo de las modificaciones y tuneos para llevar tu coche al siguiente nivel.</p>
+    <div class="hero-banner">
+        <div class="hero-text">
+            <h1>Bienvenido a Los Santos Custom</h1>
+            <p>Tu destino para las mejores modificaciones y tuneos de coches. ¡Haz que tu coche se vea como nunca antes!</p>
+        </div>
+    </div>
 
-    <button onclick="location.href='/gallery'">Explorar Marcas</button>
-    <button onclick="location.href='/contact'">Contacta con nosotros</button>
-</div>
+    <div class="main-content">
+        <section class="intro">
+            <h2>¿Quiénes Somos?</h2>
+            <p>En Los Santos Custom, nos especializamos en ofrecer modificaciones de alto rendimiento y estilo para tu coche. Ya sea que busques un aspecto único, mayor potencia o personalización en cada detalle, tenemos lo que necesitas. ¡Acompáñanos y haz que tu coche sea verdaderamente tuyo!</p>
+        </section>
+
+        <section class="services">
+            <h2>Nuestros Servicios</h2>
+            <div class="service-item">
+                <img src="{{ url_for('static', path='images/tune.jpg') }}" alt="Tuning">
+                <h3>Tuneo de Coche</h3>
+                <p>Transformamos tu coche en una obra de arte con mejoras de rendimiento y estética.</p>
+            </div>
+            <div class="service-item">
+                <img src="{{ url_for('static', path='images/engine.jpg') }}" alt="Engine Mods">
+                <h3>Modificaciones de Motor</h3>
+                <p>Potencia tu coche con los mejores motores y piezas del mercado.</p>
+            </div>
+            <div class="service-item">
+                <img src="{{ url_for('static', path='images/wheels.jpg') }}" alt="Wheels Mods">
+                <h3>Ruedas Personalizadas</h3>
+                <p>Le damos el toque final a tu coche con llantas personalizadas y neumáticos de alta calidad.</p>
+            </div>
+        </section>
+    </div>
 {% endblock %}
