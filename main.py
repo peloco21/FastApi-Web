@@ -2,6 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
+from fastapi import Form 
 
 app = FastAPI()
 
@@ -113,7 +114,7 @@ def gallery(request: Request, search: str = ""):
     })
 
 @app.get("/contact", response_class=HTMLResponse)
-def contact(request: Request):
+def contact_get(request: Request):
     return templates.TemplateResponse("contact.html", {"request": request})
 
 @app.get("/services", response_class=HTMLResponse)
@@ -140,3 +141,16 @@ def marca(request: Request, nombre_marca: str):
         })
     else:
         return templates.TemplateResponse("404.html", {"request": request})
+
+@app.post("/contact", response_class=HTMLResponse)
+def submit_contact(
+    request: Request,
+    name: str = Form(...),
+    email: str = Form(...),
+    message: str = Form(...)
+):
+    confirmation_message = "Gracias, {}. Hemos recibido tu mensaje y te responderemos pronto.".format(name)
+    return templates.TemplateResponse("contact.html", {
+        "request": request,
+        "confirmation_message": confirmation_message
+    })
